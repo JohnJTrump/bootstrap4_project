@@ -13,9 +13,11 @@
   <body>
     
     <div class="container">
-
+        
         <nav class="navbar navbar-expand-lg navbar-light bg-info">
-                       
+            <div class="media">
+                <img src="./img/projector_1.png" class="align-self-start mr-3" alt="movie_projector"> <!-- added projector image at top left-->
+            <div class="media-body">           
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
@@ -78,8 +80,9 @@
         <div class="card-deck" id="showtimes">
             <div class="card">
                 <div class="embed-responsive embed-responsive-16by9">
-                    <img src="./img/beautyandthebeast.jpg" class="card-img-top embed-responsive-item" alt="Beauty and the beast">
-                </div>
+                    <!--<img src="./img/beautyandthebeast.jpg" class="card-img-top embed-responsive-item" alt="Beauty and the beast"> -->
+                    <button type="button" class="card-img-top embed-responsive-item btn btn-outline-primary" data-toggle="modal" data-target="#Beauty_Beast" alt="Beauty and the beast"><img src="./img/beautyandthebeast_1.png"></button>
+                </div>                              <!-- above line adds modal to card to display movie poster -->
                     <div class="card-body">
                         <h5 class="card-title">Beauty and the Beast</h5>
                         <p class="card-text">An arrogant young prince and his castle's servants fall under the spell
@@ -109,8 +112,9 @@
             </div>        
             <div class="card">
               <div class="embed-responsive embed-responsive-16by9">
-                <img src="./img/ghostintheshell.jpg" class="card-img-top embed-responsive-item" alt="Ghost in the Shell">
-              </div>
+                <!--<img src="./img/ghostintheshell.jpg" class="card-img-top embed-responsive-item" alt="Ghost in the Shell"> -->
+                <button type="button" class="card-img-top embed-responsive-item btn btn-outline-primary" data-toggle="modal" data-target="#GhostInShell" alt="Ghost Shell"><img src="./img/ghostintheshell.jpg"></button>
+              </div>                    <!-- above line adds modal to card to display movie poster -->
                 <div class="card-body">
                     <h5 class="card-title">Ghost in the Shell</h5>
                     <p class="card-text">In the near future, Major is the first of her kind: a human who is cyber-enhanced 
@@ -140,10 +144,11 @@
             </div>
             <div class="card">
                 <div class="embed-responsive embed-responsive-16by9">
-                    <img src="./img/kongskullisland.jpg" class="card-img-top embed-responsive-item" alt="Kong">
-                </div>   
+                    <!--<img src="./img/kongskullisland.jpg" class="card-img-top embed-responsive-item" alt="Kong">-->
+                    <button type="button" class="card-img-top embed-responsive-item btn btn-outline-primary" data-toggle="modal" data-target="#KongSkull" alt="Ghost in the Shell"><img src="./img/kongskullisland.jpg"></button>
+                </div>                              <!-- above line adds modal to card to display movie poster --> 
                     <div class="card-body">
-                        <h5 class="card-title">Kong: Skukll Island</h5>
+                        <h5 class="card-title">Kong: Skull Island</h5>
                         <p class="card-text">Scientists, soldiers and adventurers unite to explore a mythical,
                                      uncharted island in the Pacific Ocean. Cut off from everything they 
                                      know, they venture into the domain of the mighty Kong, igniting the 
@@ -173,15 +178,132 @@
        
         <!--/ShowTimes-->
 
-        <div class="text-center" id="deals">
+        <!--Jumbotron heading -->
+        <div class="jumbotron jumbotron-fluid bg-info mt-5 text-center">
+            <div class="container" id="deals">
+              <h1 class="display-4 hidden-sm-down" style="color: #fff; font-family: roboto; font-weight: 900; text-transform: uppercase;">Movie Deals</h1>
+              <p class="lead">Check out our monthly deals...</p>
+              <!-- movie deals -->
+              <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#register">See our monthly movie deals!</button>
+            </div>
+          </div>
+
+        <div class="text-center">
             <form>
                 <h1 class="text-primary my-5">Sign up for Movie Club Rewards</h1>
                 <div class="form-group">
                     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="button" class="btn btn-primary btn-info popover-dismiss" data-container="body" data-toggle="popover" data-placement="top" data-content="Submit your email to receive great movie reward deals!">Sign Up!</button>
               </form>
         </div>
+        
+        <!-- Form Modal -->
+        <div class="modal fade" id="register">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Register to receive movie deals...</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+
+                    <form>
+                        <fieldset class="form-group">
+                            <label for="firstname">First Name</label>
+                            <input type="text" class="form-control" id="firstname" placeholder="First Name...">
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <label for="lasttname">Last Name</label>
+                            <input type="text" class="form-control" id="lastname" placeholder="Last Name...">
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control" id="email" placeholder="Email...">
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Password...">
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!-- Close Form Modal -->
+        <!--movie poster beauty and beast modal-->
+          <div class="modal fade" id="Beauty_Beast">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Beauty and the Beast</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                <img src="./img/BandBPoster.jpg" class="card-img-top embed-responsive-item" alt="Poster">
+                       
+                    
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!-- end Beauty and Beast model-->
+        <!--movie poster Ghost in Shell modal-->
+        <div class="modal fade" id="GhostInShell">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Ghost in the Shell</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                <img src="./img/Ghost_in_the_Shell_Poster.png" class="card-img-top embed-responsive-item" alt="Poster">
+                       
+                    
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!-- End Ghost in the Shell Modal -->
+        <!--movie poster Kong Skull Island modal-->
+        <div class="modal fade" id="KongSkull">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Kong: Skull Island</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                <img src="./img/KongIsland.jpg" class="card-img-top embed-responsive-item" alt="Poster">
+                       
+                    
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!-- End Kong Skull island Modal -->
+        <!-- Footer -->
         <div class="container">
             <ul class="nav nav-inline nav justify-content-center my-5">
                 <li class="nav-item">
@@ -210,5 +332,11 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  </body>
+    
+    <script>
+        $('.popover-dismiss').popover({
+            trigger: 'focus'
+        })
+    </script>
+    </body>
 </html>
